@@ -12,6 +12,7 @@ import Resources from './pages/Resources';
 import News from './pages/News';
 import Member from './pages/Member';
 import Header from './component/Header';
+import Footer from './component/Footer';
 
 
 
@@ -32,6 +33,7 @@ function App() {
             <Route path="/become-a-member" element={<Member />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>
+          <Footer />
         </BrowserRouter>
     </>
   );

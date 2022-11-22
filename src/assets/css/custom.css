@@ -39,6 +39,7 @@ body{
     font-size:16px;
     line-height:1.5em;
     font-family:var(--Roboto);
+    color:var(--PriTextColor)
 }
 
 p{
@@ -54,9 +55,14 @@ p{
     --priColor:#00234F;
     --accColor:#FEB913;
     --whiteColor:#ffffff;
+    --lightGreyBg:#F5F5F5;
 
     --PriTextColor:#001838;
     --skyBlueColor:#1AC8FF;
+}
+
+.accColor{
+    color:var(--accColor)
 }
 
 h1, h2, h3{
@@ -69,6 +75,21 @@ h1{
 }
 h2{
     font-size:96px;
+}
+h3{
+    font-size:70px;
+}
+
+h5{
+    font-size:24px
+}
+
+h6{
+    font-size:15px;
+    font-family:var(--RobotoCond);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight:500
 }
 
 img{
@@ -340,4 +361,91 @@ img{
 }
 .swiperSlider .swiper .swiper-slide img{
     width:100%;
+    max-height:500px;
+
+}
+.swiperSlider .contentWrap h4{
+    font-family:var(--RobotoCond);
+    font-weight:500;
+    font-size:32px;
+    text-transform: capitalize;
+}
+body .swiperSlider .swiper-button-prev,
+body .swiperSlider .swiper-rtl .swiper-button-next{
+    left:2%;
+}
+body .swiperSlider .swiper-button-next,
+body .swiperSlider .swiper-rtl .swiper-button-prev{
+    right:2%;
+}
+
+
+.allQuotes .snglQuote{
+    padding-top:80px;
+    padding-bottom:80px;
+    border-top:1px solid #6B6B6B
+}
+.allQuotes .snglQuote:last-child{
+    border-bottom:1px solid #6B6B6B
+}
+
+
+.newsEvents{
+    background:var(--lightGreyBg);
+}
+.featurePost .postWrap{
+    background:var(--whiteColor);
+}
+.featurePost .postWrap .featImg{
+    overflow: hidden;
+    max-height:600px
+    
+}
+.featurePost .postWrap .featImg img{
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+.featurePost .postWrap .featImg:hover img{
+    transform:scale(1.1)
+}
+.featurePost .contentWrap{
+    padding:70px;
+}
+
+.pendingPosts{
+    flex-direction: column;
+    justify-content: space-between;
+    display:flex;
+}
+
+.pendingPosts .snglPost{
+    padding:50px;
+    background:var(--whiteColor);
+    position: relative;
+}
+
+.pendingPosts .snglPost h5{
+    font-family:var(--RobotoCond);
+    font-weight:500;
+    margin-top:15px;
+    padding-right:70px
+}
+.pendingPosts .snglPost h5 a{
+    text-decoration: none;
+    color:var(--PriTextColor);
+}
+.pendingPosts .snglPost:hover{
+    background:var(--skyBlueColor)
+}
+.pendingPosts .snglPost .btnWrap{
+    position: absolute;
+    right:50px;
+    bottom:50px;
+}
+.pendingPosts .snglPost .btnWrap a.btn{
+    font-size:25px;
+    color:var(--PriTextColor)
 }
