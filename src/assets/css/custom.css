@@ -64,19 +64,26 @@ p{
 .accColor{
     color:var(--accColor)
 }
+.skyBlueColor{
+    color:var(--skyBlueColor)
+}
 
-h1, h2, h3{
+h1, h2, h3, h4{
     font-family:var(--Bebas);
     line-height:0.9em;
 }
 
-h1{
+h5, h6{
+    line-height: 1.4em;
+}
+
+h2{
     font-size:130px;    
 }
-h2{
+h3{
     font-size:96px;
 }
-h3{
+h4{
     font-size:70px;
 }
 
@@ -171,12 +178,25 @@ img{
     width:100%   
 }
 
+.btn.btn-secondary{
+    background:var(--priColor);
+    color:var(--accColor)
+}
+
+.btn.btn-secondary.slide-hover:hover{    
+    color:var(--PriTextColor)
+}       
+
 .btn.btn-simple{
     padding:0;
     color:var(--accColor);    
 }
 .btn.btn-simple:hover .btnIcon{
     margin-left:18px
+}
+
+.btn.btn-simple.blue{ 
+    color:var(--PriTextColor);    
 }
 
 
@@ -266,7 +286,11 @@ img{
 }
 
 .siteHeader.stickyHeader .siteMenu .navBar ul > li.menu-item > a{
-    color:var(--PriTextColor)
+    background-size: 200% 100%;
+    background-image: linear-gradient(to right, var(--PriTextColor) 50%, var(--skyBlueColor) 50%);
+    transition: background-position .3s linear;
+    -webkit-background-clip: text,border-box;
+    background-clip: text,border-box;
 }
 
 
@@ -361,7 +385,7 @@ img{
 }
 .swiperSlider .swiper .swiper-slide img{
     width:100%;
-    max-height:500px;
+    max-height:600px;
 
 }
 .swiperSlider .contentWrap h4{
@@ -448,4 +472,228 @@ body .swiperSlider .swiper-rtl .swiper-button-prev{
 .pendingPosts .snglPost .btnWrap a.btn{
     font-size:25px;
     color:var(--PriTextColor)
+}
+
+
+
+.bigTitle{
+    font-size:300px;
+    line-height:0.8em
+}
+.bigTitle a{
+    text-decoration: none;
+    color:var(--skyBlueColor);    
+}
+.bigTitle a:hover span{
+    color:var(--skyBlueColor)
+}
+.bigTitle a span.accColor svg{
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+.bigTitle a:hover span.accColor svg{
+    margin-left:35px;
+}
+.bigTitle a:hover span.accColor svg path{
+    fill:var(--skyBlueColor);    
+}
+
+/* ==========Footer========== */
+.siteFooter{
+    background:var(--PriTextColor);           
+}
+.footerMenu ul{
+    list-style: none;
+    padding:0
+}
+.footerMenu ul li{
+    display:block;
+    font-family:var(--RobotoCond);
+    font-size:32px;    
+    padding:20px 0    
+}
+.footerMenu ul li a{
+    text-decoration: none;
+    color:transparent;
+    background-size: 200% 100%;
+    background-image: linear-gradient(to right, var(--whiteColor) 50%, var(--skyBlueColor) 50%);
+    transition: background-position .3s linear;
+    -webkit-background-clip: text,border-box;
+    background-clip: text,border-box;
+}
+.footerMenu ul li a:hover{
+    background-position: -100% 0;
+}
+
+.socialMediaMenu ul{
+    padding: 0;
+}
+
+.socialMediaMenu ul li{
+    display: inline;
+    font-size:20px;
+    margin-left:30px
+}
+.socialMediaMenu ul li a{
+    color:var(--whiteColor);
+}
+
+.list-group .list-group-item{
+    padding:0;
+    background:transparent;
+    box-shadow:none;
+    border:none;
+    padding-top:25px;
+    padding-bottom:25px;
+}
+.list-group .list-group-item .badge{
+    font-size:24px;
+    background:var(--accColor);
+    width:45px;
+    height:45px;
+    display:flex;
+    align-items: center;    
+    justify-content: center;
+    font-weight:500;
+    font-family:var(--RobotoCond);
+    color:var(--PriTextColor)
+}
+.list-group .list-group-item .contentWrap h5{
+    font-family:var(--RobotoCond);
+    font-weight: 500;
+    margin-bottom:0;;
+}
+.list-group .list-group-item .contentWrap p{
+    margin-bottom:0;
+}
+
+.countUp .countNumber{
+    font-size:500px;
+    line-height:0.8em;
+}
+
+.hibHistory .snglHistory .imgArea{
+    padding:80px 100px;
+    padding-left:0;
+    border-right:1px dashed var(--PriTextColor);
+    position: relative;
+}
+.hibHistory .snglHistory .imgArea .hisYears{
+    position: absolute;
+    bottom:calc(80px + 30px);
+    left:40px;
+}
+.hibHistory .snglHistory .contArea{
+    padding:80px 100px;
+}
+
+.hibHistory .snglHistory.flex-row-reverse .imgArea{
+    padding-right:0;
+    padding-left:100px;
+    border-right:0;
+    border-left:1px dashed var(--PriTextColor)
+}
+.hibHistory .snglHistory.flex-row-reverse .imgArea .hisYears{
+    left:auto;
+    right:40px;
+}
+
+.blockArea{
+    margin-top:70px;    
+}
+.blockArea .imgArea{
+    min-height:650px;
+}
+.blockArea .contArea{
+    background:var(--accColor);
+    padding:120px;
+}
+
+.allAccordion .accordion {
+    --bs-accordion-bg: none;
+}
+.allAccordion .snglAccordion .accordion-button::after{
+    display:none
+}
+.allAccordion .snglAccordion.accordion-item{
+    border:none;
+    background:transparent;
+}
+.allAccordion .snglAccordion.accordion-item button{
+    padding:0;
+    border-radius:none;
+    text-transform: normal!important;
+    font-family:var(--RobotoCond);
+    font-weight:500;
+    background:none;
+    box-shadow: none;
+    padding:50px 35px;
+
+}
+.allAccordion .snglAccordion.accordion-item .accordion-header button svg{
+    width:45px;
+    height:45px;
+    padding:10px;
+    border-radius:100%;
+    color:var(--accColor);
+    background:var(--priColor);
+    margin-right:35px;
+}
+
+.allAccordion .snglAccordion.accordion-item .accordion-header button.collapsed svg{
+    background:var(--accColor); 
+    color:var(--PriTextColor)
+}
+
+.allAccordion .snglAccordion.accordion-item:hover .accordion-header button svg{
+    background:var(--priColor);
+    color:var(--accColor)
+}
+
+.allAccordion .snglAccordion.accordion-item{
+    border-radius:0
+}
+
+.allAccordion .snglAccordion.accordion-item{
+    color:var(--PriTextColor)
+}
+
+
+.allAccordion .snglAccordion.accordion-item .accordion-header:hover button.collapsed,
+.allAccordion .snglAccordion.accordion-item .accordion-header button{
+    background:var(--skyBlueColor);
+    border-radius:0;
+    color:var(--PriTextColor)
+}
+
+.allAccordion .snglAccordion.accordion-item .accordion-header button.collapsed{
+    background:none
+}
+
+
+.allAccordion .snglAccordion.accordion-item .accordion-header button .plus{
+    display:none
+}
+
+.allAccordion .snglAccordion.accordion-item .accordion-header button.collapsed .minus{
+    display:none;
+}
+.allAccordion .snglAccordion.accordion-item .accordion-header button.collapsed .plus{
+    display:block;
+}
+.allAccordion .snglAccordion.accordion-item button:focus{
+    border:none;
+    box-shadow: none;
+}
+
+.allAccordion .snglAccordion.accordion-item .accordion-body{
+    padding:50px 100px;
+}
+
+
+.allAccordion .snglAccordion.accordion-item .accordion-header h5{
+    font-size:32px;    
 }
