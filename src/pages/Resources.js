@@ -3,14 +3,19 @@ import { motion } from 'framer-motion';
 import { BiPlayCircle } from "react-icons/bi";
 import { RiExternalLinkFill, RiH5 } from "react-icons/ri";
 import {useInView} from 'react-intersection-observer';
-//import { MDBAccordion, MDBAccordionItem, MDBCollapse, MDBBtn } from 'mdb-react-ui-kit';
+import { MDBCollapse, MDBBtn } from 'mdb-react-ui-kit';
 import Accordion from 'react-bootstrap/Accordion';
 import { BsPlusLg, BsDashLg } from "react-icons/bs";
 
 
+
 function About(){
-    //const [showShow, setShowShow] = useState(false);
-    //const toggleShow = () => setShowShow(!showShow);
+    const [showShow, setShowShow] = useState(false);    
+    const toggleShow = () => {
+        setShowShow(!showShow);
+        setActive(!isActive);
+    };
+    const [isActive, setActive] = useState(false);    
 
 
     const {ref: myRef, inView: myElementIsVisible } = useInView({ triggerOnce: true});
@@ -65,7 +70,7 @@ function About(){
                             <div className="btnWrap">
                                 <a href className="btn btn-secondary slide-hover">
                                     <span className="btnText">Learn More</span>
-                                    <span className="btnIcon "><RiExternalLinkFill /></span>
+                                    <span className="btnIcon "><RiExternalLinkFill /></span>                                 
                                 </a>
                             </div>
                         </div> 
@@ -77,6 +82,29 @@ function About(){
                     <div className="col-12 accoWrap">                        
                         <Accordion>
                             <Accordion.Item eventKey="0" className="snglAccordion border-top border-bottom">
+                                <Accordion.Header className="d-flex">
+                                    <BsPlusLg className="fs-3 plus" />
+                                    <BsDashLg className="fs-3 minus" />
+                                    <h5 className="mb-0">Chicago Women in Trades Resources</h5>
+                                </Accordion.Header>
+                                <Accordion.Body className="row g-0 flex-row-reverse">
+                                    <div className="col-md-4 imgArea">
+                                        <img  src="images/simpleAccordionImg.jpg" alt="" />
+                                    </div>
+                                    <div className="col-md-8 pe-5">
+                                        <p>The SIB newsletters contain TIPS for building a strong Sisters committee. Published on a monthly basis, the newsletter welcomes and encourages SIB Committees to share their TIPS for success! </p>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non imperdiet turpis, id molestie orci. Donec tristique quam ultrices laoreet tempor. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                        <p>Nam posuere purus quis lectus fermentum convallis. Curabitur sit amet mauris quis augue iaculis posuere vitae sit amet leo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Pellentesque porta iaculis mauris, sit amet malesuada orci dignissim id. Sed tellus leo, pellentesque in ornare eget, vehicula sed dolor. </p>
+                                        <div className="btnWrap">
+                                            <a href className="btn btn-primary slide-hover">
+                                                <span className="btnText">Learn More</span>
+                                                <span className="btnIcon"><RiExternalLinkFill /></span>
+                                            </a>
+                                        </div>   
+                                    </div>                                        
+                                </Accordion.Body>
+                            </Accordion.Item>
+                            <Accordion.Item eventKey="1" className="snglAccordion border-top border-bottom">
                                 <Accordion.Header className="d-flex">
                                     <BsPlusLg className="fs-3 plus" />
                                     <BsDashLg className="fs-3 minus" />
@@ -98,8 +126,200 @@ function About(){
                                         </div>   
                                     </div>                                        
                                 </Accordion.Body>
-                            </Accordion.Item>                           
+                            </Accordion.Item>
+                            <Accordion.Item eventKey="2" className="snglAccordion border-top border-bottom">
+                                <Accordion.Header className="d-flex">
+                                    <BsPlusLg className="fs-3 plus" />
+                                    <BsDashLg className="fs-3 minus" />
+                                    <h5 className="mb-0">UBC International Sisters in the Brotherhood “TIPS” Newsletter</h5>
+                                </Accordion.Header>
+                                <Accordion.Body className="row g-0 flex-row-reverse">
+                                    <div className="col-md-4 imgArea">
+                                        <img  src="images/simpleAccordionImg.jpg" alt="" />
+                                    </div>
+                                    <div className="col-md-8 pe-5">
+                                        <p>The SIB newsletters contain TIPS for building a strong Sisters committee. Published on a monthly basis, the newsletter welcomes and encourages SIB Committees to share their TIPS for success! </p>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non imperdiet turpis, id molestie orci. Donec tristique quam ultrices laoreet tempor. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                        <p>Nam posuere purus quis lectus fermentum convallis. Curabitur sit amet mauris quis augue iaculis posuere vitae sit amet leo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Pellentesque porta iaculis mauris, sit amet malesuada orci dignissim id. Sed tellus leo, pellentesque in ornare eget, vehicula sed dolor. </p>
+                                        <div className="btnWrap">
+                                            <a href className="btn btn-primary slide-hover">
+                                                <span className="btnText">Learn More</span>
+                                                <span className="btnIcon"><RiExternalLinkFill /></span>
+                                            </a>
+                                        </div>   
+                                    </div>                                        
+                                </Accordion.Body>
+                            </Accordion.Item>
+                            <Accordion.Item eventKey="3" className="snglAccordion border-top border-bottom">
+                                <Accordion.Header className="d-flex">
+                                    <BsPlusLg className="fs-3 plus" />
+                                    <BsDashLg className="fs-3 minus" />
+                                    <h5 className="mb-0">Lean In Circles</h5>
+                                </Accordion.Header>
+                                <Accordion.Body className="row g-0 flex-row-reverse">
+                                    <div className="col-md-4 imgArea">
+                                        <img  src="images/simpleAccordionImg.jpg" alt="" />
+                                    </div>
+                                    <div className="col-md-8 pe-5">
+                                        <p>The SIB newsletters contain TIPS for building a strong Sisters committee. Published on a monthly basis, the newsletter welcomes and encourages SIB Committees to share their TIPS for success! </p>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non imperdiet turpis, id molestie orci. Donec tristique quam ultrices laoreet tempor. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                        <p>Nam posuere purus quis lectus fermentum convallis. Curabitur sit amet mauris quis augue iaculis posuere vitae sit amet leo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Pellentesque porta iaculis mauris, sit amet malesuada orci dignissim id. Sed tellus leo, pellentesque in ornare eget, vehicula sed dolor. </p>
+                                        <div className="btnWrap">
+                                            <a href className="btn btn-primary slide-hover">
+                                                <span className="btnText">Learn More</span>
+                                                <span className="btnIcon"><RiExternalLinkFill /></span>
+                                            </a>
+                                        </div>   
+                                    </div>                                        
+                                </Accordion.Body>
+                            </Accordion.Item>
+                            <Accordion.Item eventKey="4" className="snglAccordion border-top border-bottom">
+                                <Accordion.Header className="d-flex">
+                                    <BsPlusLg className="fs-3 plus" />
+                                    <BsDashLg className="fs-3 minus" />
+                                    <h5 className="mb-0">MacLean’s Article</h5>
+                                </Accordion.Header>
+                                <Accordion.Body className="row g-0 flex-row-reverse">
+                                    <div className="col-md-4 imgArea">
+                                        <img  src="images/simpleAccordionImg.jpg" alt="" />
+                                    </div>
+                                    <div className="col-md-8 pe-5">
+                                        <p>The SIB newsletters contain TIPS for building a strong Sisters committee. Published on a monthly basis, the newsletter welcomes and encourages SIB Committees to share their TIPS for success! </p>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non imperdiet turpis, id molestie orci. Donec tristique quam ultrices laoreet tempor. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                        <p>Nam posuere purus quis lectus fermentum convallis. Curabitur sit amet mauris quis augue iaculis posuere vitae sit amet leo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Pellentesque porta iaculis mauris, sit amet malesuada orci dignissim id. Sed tellus leo, pellentesque in ornare eget, vehicula sed dolor. </p>
+                                        <div className="btnWrap">
+                                            <a href className="btn btn-primary slide-hover">
+                                                <span className="btnText">Learn More</span>
+                                                <span className="btnIcon"><RiExternalLinkFill /></span>
+                                            </a>
+                                        </div>   
+                                    </div>                                        
+                                </Accordion.Body>
+                            </Accordion.Item>
+                            <MDBCollapse show={showShow}>
+                                <Accordion.Item eventKey="5" className="snglAccordion border-top border-bottom">
+                                    <Accordion.Header className="d-flex">
+                                        <BsPlusLg className="fs-3 plus" />
+                                        <BsDashLg className="fs-3 minus" />
+                                        <h5 className="mb-0">Ontario Building and Construction Tradeswomen</h5>
+                                    </Accordion.Header>
+                                    <Accordion.Body className="row g-0 flex-row-reverse">
+                                        <div className="col-md-4 imgArea">
+                                            <img  src="images/simpleAccordionImg.jpg" alt="" />
+                                        </div>
+                                        <div className="col-md-8 pe-5">
+                                            <p>The SIB newsletters contain TIPS for building a strong Sisters committee. Published on a monthly basis, the newsletter welcomes and encourages SIB Committees to share their TIPS for success! </p>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non imperdiet turpis, id molestie orci. Donec tristique quam ultrices laoreet tempor. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                            <p>Nam posuere purus quis lectus fermentum convallis. Curabitur sit amet mauris quis augue iaculis posuere vitae sit amet leo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Pellentesque porta iaculis mauris, sit amet malesuada orci dignissim id. Sed tellus leo, pellentesque in ornare eget, vehicula sed dolor. </p>
+                                            <div className="btnWrap">
+                                                <a href className="btn btn-primary slide-hover">
+                                                    <span className="btnText">Learn More</span>
+                                                    <span className="btnIcon"><RiExternalLinkFill /></span>
+                                                </a>
+                                            </div>   
+                                        </div>                                        
+                                    </Accordion.Body>
+                                </Accordion.Item>
+                                <Accordion.Item eventKey="6" className="snglAccordion border-top border-bottom">
+                                    <Accordion.Header className="d-flex">
+                                        <BsPlusLg className="fs-3 plus" />
+                                        <BsDashLg className="fs-3 minus" />
+                                        <h5 className="mb-0">OBC Tradeswomen</h5>
+                                    </Accordion.Header>
+                                    <Accordion.Body className="row g-0 flex-row-reverse">
+                                        <div className="col-md-4 imgArea">
+                                            <img  src="images/simpleAccordionImg.jpg" alt="" />
+                                        </div>
+                                        <div className="col-md-8 pe-5">
+                                            <p>The SIB newsletters contain TIPS for building a strong Sisters committee. Published on a monthly basis, the newsletter welcomes and encourages SIB Committees to share their TIPS for success! </p>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non imperdiet turpis, id molestie orci. Donec tristique quam ultrices laoreet tempor. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                            <p>Nam posuere purus quis lectus fermentum convallis. Curabitur sit amet mauris quis augue iaculis posuere vitae sit amet leo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Pellentesque porta iaculis mauris, sit amet malesuada orci dignissim id. Sed tellus leo, pellentesque in ornare eget, vehicula sed dolor. </p>
+                                            <div className="btnWrap">
+                                                <a href className="btn btn-primary slide-hover">
+                                                    <span className="btnText">Learn More</span>
+                                                    <span className="btnIcon"><RiExternalLinkFill /></span>
+                                                </a>
+                                            </div>   
+                                        </div>                                        
+                                    </Accordion.Body>
+                                </Accordion.Item>
+                                <Accordion.Item eventKey="7" className="snglAccordion border-top border-bottom">
+                                    <Accordion.Header className="d-flex">
+                                        <BsPlusLg className="fs-3 plus" />
+                                        <BsDashLg className="fs-3 minus" />
+                                        <h5 className="mb-0">Sista in the Brotherhood</h5>
+                                    </Accordion.Header>
+                                    <Accordion.Body className="row g-0 flex-row-reverse">
+                                        <div className="col-md-4 imgArea">
+                                            <img  src="images/simpleAccordionImg.jpg" alt="" />
+                                        </div>
+                                        <div className="col-md-8 pe-5">
+                                            <p>The SIB newsletters contain TIPS for building a strong Sisters committee. Published on a monthly basis, the newsletter welcomes and encourages SIB Committees to share their TIPS for success! </p>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non imperdiet turpis, id molestie orci. Donec tristique quam ultrices laoreet tempor. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                            <p>Nam posuere purus quis lectus fermentum convallis. Curabitur sit amet mauris quis augue iaculis posuere vitae sit amet leo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Pellentesque porta iaculis mauris, sit amet malesuada orci dignissim id. Sed tellus leo, pellentesque in ornare eget, vehicula sed dolor. </p>
+                                            <div className="btnWrap">
+                                                <a href className="btn btn-primary slide-hover">
+                                                    <span className="btnText">Learn More</span>
+                                                    <span className="btnIcon"><RiExternalLinkFill /></span>
+                                                </a>
+                                            </div>   
+                                        </div>                                        
+                                    </Accordion.Body>
+                                </Accordion.Item>
+                                <Accordion.Item eventKey="8" className="snglAccordion border-top border-bottom">
+                                    <Accordion.Header className="d-flex">
+                                        <BsPlusLg className="fs-3 plus" />
+                                        <BsDashLg className="fs-3 minus" />
+                                        <h5 className="mb-0">Tradeswomen Building Bridges</h5>
+                                    </Accordion.Header>
+                                    <Accordion.Body className="row g-0 flex-row-reverse">
+                                        <div className="col-md-4 imgArea">
+                                            <img  src="images/simpleAccordionImg.jpg" alt="" />
+                                        </div>
+                                        <div className="col-md-8 pe-5">
+                                            <p>The SIB newsletters contain TIPS for building a strong Sisters committee. Published on a monthly basis, the newsletter welcomes and encourages SIB Committees to share their TIPS for success! </p>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non imperdiet turpis, id molestie orci. Donec tristique quam ultrices laoreet tempor. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                            <p>Nam posuere purus quis lectus fermentum convallis. Curabitur sit amet mauris quis augue iaculis posuere vitae sit amet leo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Pellentesque porta iaculis mauris, sit amet malesuada orci dignissim id. Sed tellus leo, pellentesque in ornare eget, vehicula sed dolor. </p>
+                                            <div className="btnWrap">
+                                                <a href className="btn btn-primary slide-hover">
+                                                    <span className="btnText">Learn More</span>
+                                                    <span className="btnIcon"><RiExternalLinkFill /></span>
+                                                </a>
+                                            </div>   
+                                        </div>                                        
+                                    </Accordion.Body>
+                                </Accordion.Item>
+                                <Accordion.Item eventKey="9" className="snglAccordion border-top border-bottom">
+                                    <Accordion.Header className="d-flex">
+                                        <BsPlusLg className="fs-3 plus" />
+                                        <BsDashLg className="fs-3 minus" />
+                                        <h5 className="mb-0">Tradeswomen Building Bridges Presentation</h5>
+                                    </Accordion.Header>
+                                    <Accordion.Body className="row g-0 flex-row-reverse">
+                                        <div className="col-md-4 imgArea">
+                                            <img  src="images/simpleAccordionImg.jpg" alt="" />
+                                        </div>
+                                        <div className="col-md-8 pe-5">
+                                            <p>The SIB newsletters contain TIPS for building a strong Sisters committee. Published on a monthly basis, the newsletter welcomes and encourages SIB Committees to share their TIPS for success! </p>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non imperdiet turpis, id molestie orci. Donec tristique quam ultrices laoreet tempor. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                            <p>Nam posuere purus quis lectus fermentum convallis. Curabitur sit amet mauris quis augue iaculis posuere vitae sit amet leo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Pellentesque porta iaculis mauris, sit amet malesuada orci dignissim id. Sed tellus leo, pellentesque in ornare eget, vehicula sed dolor. </p>
+                                            <div className="btnWrap">
+                                                <a href className="btn btn-primary slide-hover">
+                                                    <span className="btnText">Learn More</span>
+                                                    <span className="btnIcon"><RiExternalLinkFill /></span>
+                                                </a>
+                                            </div>   
+                                        </div>                                        
+                                    </Accordion.Body>
+                                </Accordion.Item>
+                            </MDBCollapse>                            
                         </Accordion>
+                        <div className="btnWrap mt-5">
+                            <a href className={`btn btn-primary slide-hover toggleClass ${isActive ? 'active': ''}`} onClick={toggleShow}>
+                                <span className="btnText">Show {isActive ? 'Less': 'More'}</span>
+                                <span className="btnIcon ">  {isActive ?  <BsDashLg />:  <BsPlusLg />} </span>                                 
+                            </a>
+                        </div>
                     </div>
                 </div>   
             </section>

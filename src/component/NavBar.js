@@ -1,17 +1,18 @@
+import React, {useState} from 'react';
 import {NavLink} from 'react-router-dom';
 
-function NavBar(){
+function NavBar(){   
+    const [isOpen, setOpen] = useState(false)
+    const [showMenu, setShowMenu] = useState(false);
     return(
-       <>
-        <nav className="navBar">
-            <ul>                        
-                <li className="menu-item"><NavLink exact to='/about' >About</NavLink></li>
-                <li className="menu-item"><NavLink exact to='/resources' >Resources</NavLink></li>
-                <li className="menu-item"><NavLink exact to='/news' >News</NavLink></li>
-                <li className="menu-item"><NavLink exact to='/member' >Member</NavLink></li>
-                <li className="menu-item"><NavLink exact to='/contact' >Contact</NavLink></li>
-            </ul>
-        </nav>
+       <>       
+        <ul>                        
+            <li className="menu-item"><NavLink exact to='/about' onClick={() => setShowMenu(!showMenu)}>About</NavLink></li>
+            <li className="menu-item"><NavLink exact to='/resources' onClick={() => setShowMenu(!showMenu)}>Resources</NavLink></li>
+            <li className="menu-item"><NavLink exact to='/news' onClick={() => setShowMenu(!showMenu)}>News</NavLink></li>
+            <li className="menu-item"><NavLink exact to='/member' onClick={() => setShowMenu(!showMenu)}>Member</NavLink></li>
+            <li className="menu-item"><NavLink exact to='/contact' onClick={() => setShowMenu(!showMenu)}>Contact</NavLink></li>
+        </ul>
        </>
     )
 }

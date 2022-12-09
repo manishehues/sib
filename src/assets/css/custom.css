@@ -122,6 +122,16 @@ img{
     margin-top:10px
 }
 
+.toggleClass .showLess{
+    display:none
+}
+.toggleClass.active .showLess{
+    display:block
+}
+.toggleClass.active .showMore{
+    display:none
+}
+
 .btn{
     font-size:16px;
     font-family:var(--RobotoCond);
@@ -216,7 +226,7 @@ img{
     padding-top:25px;
     padding-bottom:25px;
     position: fixed;
-    z-index: 9999;
+    z-index: 999999;
     left:0;
     top:0;
     width:100%;
@@ -233,6 +243,7 @@ img{
 
 .siteHeader .siteLogo{
     position: relative;
+    z-index: 999999;    
 }
 .siteHeader .siteLogo img{
     -webkit-transition: all 0.3s ease;
@@ -260,6 +271,8 @@ img{
 .siteHeader .siteMenu .navBar > ul{
     margin:0;
     list-style: none;
+    padding:0;
+    margin:auto    
 }
 .siteHeader .siteMenu .navBar ul > li.menu-item{
     display:inline;
@@ -267,17 +280,18 @@ img{
     font-size:25px;
     margin-left:20px;
     margin-right:20px;
-    font-weight:500
+    font-weight:500;
+    text-align: center;
 }
 
 .siteHeader .siteMenu .navBar ul > li.menu-item > a{
     color:transparent;
     text-decoration: none;
     background-size: 200% 100%;
-    background-image: linear-gradient(to right, var(--whiteColor) 50%, var(--accColor) 50%);
+    background-image: linear-gradient(to right, var(--whiteColor) 50%, var(--priColor) 50%);
     transition: background-position .3s linear;
     -webkit-background-clip: text,border-box;
-    background-clip: text,border-box;
+    background-clip: text,border-box;   
 }
 
 .siteHeader .siteMenu .navBar ul > li.menu-item > a:hover{
@@ -286,12 +300,83 @@ img{
 }
 
 .siteHeader.stickyHeader .siteMenu .navBar ul > li.menu-item > a{
-    background-size: 200% 100%;
-    background-image: linear-gradient(to right, var(--PriTextColor) 50%, var(--skyBlueColor) 50%);
-    transition: background-position .3s linear;
-    -webkit-background-clip: text,border-box;
-    background-clip: text,border-box;
+    background-size: 200% 100%;    
 }
+
+.siteHeader.stickyHeader .siteMenu.text-light .hamburger-react{
+    color:var(--PriTextColor)
+}
+.siteHeader .siteMenu.text-light .hamburger-react > div > div{
+    height:2px!important
+}
+.mainNavigation{
+    position: fixed;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    z-index: 999;    
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    transform-origin: right;
+    clip-path: circle(0 at 90.7% 65px);
+}
+
+.mainMenu.active .mainNavigation{
+    clip-path: circle(200% at 90.7% 10%);
+}
+.mainNavigation .overlay{
+    background:var(--priColor);
+    position: fixed;
+    width:100%;
+    height:100%;
+    opacity: 0.9;
+}
+.mainNavigation .navBar{
+    position: relative;
+    z-index: 99;
+    background:var(--skyBlueColor);
+    width:100%;
+    /* max-width:950px; */
+    float:right;
+    height:100%;
+    display:flex;
+    align-items: center;
+    padding:70px
+}
+
+
+
+.siteHeader .siteMenu .mainNavigation .navBar ul > li.menu-item{
+    display:block;
+    font-family:var(--Bebas);
+    font-size:90px;
+    line-height:normal;    
+}
+.siteHeader .siteMenu .mainNavigation .navBar .closeMenu{
+    position: absolute;
+    color:var(--priColor);
+    font-size:35px;
+    top:50px;
+    right:100px;
+    cursor: pointer;
+}
+
+.siteHeader .siteMenu .hamburger-react{
+    position: relative;
+    z-index: 99999;    
+}
+
+
+.siteHeader .text-light.siteMenu .mainMenu.active ~ .hamburger-react{
+    color:var(--PriTextColor)    
+}
+
+.siteHeader .siteLogo.active img.white{opacity: 0;}
+.siteHeader .siteLogo.active img.blue{opacity: 1;}
 
 
 

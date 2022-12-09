@@ -12,11 +12,9 @@ import Footer from './component/Footer';
 import {useEffect } from "react";
 import WOW from 'wowjs';
 
-
-
 function App() { 
   useEffect(() => {
-    new WOW.WOW().init();
+    new WOW.WOW().init();    
 });  
 
   return (
